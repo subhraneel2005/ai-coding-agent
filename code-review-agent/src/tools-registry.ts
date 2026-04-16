@@ -18,6 +18,7 @@ import {
 import { writeMemoryTool } from "./tools/memory/write-memory";
 import { runCommandTool } from "./tools/run-commands";
 import { webSearchTool } from "./tools/web/web-search";
+import { webfetchTool } from "./tools/web/web-fetch";
 
 export const tools = {
   write_file: writeFileTool,
@@ -39,6 +40,7 @@ export const tools = {
 
   write_memory: writeMemoryTool,
   run_command: runCommandTool,
-  web_search: webSearchTool
+  web_search: webSearchTool,
+  web_fetch: webfetchTool
 
 } satisfies ToolSet;

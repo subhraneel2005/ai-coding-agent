@@ -1,4 +1,5 @@
-import type { WebFetchInput, WebFetchOutput } from "../../types/tool-types";
+import { tool } from "ai";
+import { WebFetchInputSchema, WebFetchOutputSchema, type WebFetchInput, type WebFetchOutput } from "../../types/tool-types";
 import * as cheerio from "cheerio"
 
 async function webFetch({ url }: WebFetchInput): Promise<WebFetchOutput> {
@@ -36,6 +37,13 @@ async function webFetch({ url }: WebFetchInput): Promise<WebFetchOutput> {
   }
 }
 
-webFetch({
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+// webFetch({
+//     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+// })
+
+export const webfetchTool = tool({
+    description: "Accepts a valid url and fetches it to get some reponse back from the web. Only accepts HTTP/HTTPS protocol URLs.",
+    inputSchema: WebFetchInputSchema,
+    outputSchema: WebFetchOutputSchema,
+    execute: webFetch
 })
