@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 process.on("unhandledRejection", () => {});
 
 import { LoadAPIKeyError, type ErrorHandler } from "ai";

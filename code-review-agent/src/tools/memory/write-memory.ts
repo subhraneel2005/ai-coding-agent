@@ -3,7 +3,7 @@ import {
   WriteMemoryInputSchema,
   type WriteMemory,
 } from "../../types/tool-types";
-import { appendToFile, writeFileWithContent } from "../write-file";
+import { appendToFile } from "../write-file";
 
 async function writeMemory({ memoryType, content }: WriteMemory) {
   const fileMap = {

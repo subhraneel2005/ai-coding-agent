@@ -69,6 +69,19 @@ A CLI-based AI coding companion im building from scratch while reverse engineeri
 
 ---
 
+### Command Execution
+
+- run_command - Execute shell commands (npm, pnpm, python, go, cargo, etc.)
+
+---
+
+### Web Tools
+
+- web_search - Search the web for information
+- web_fetch - Fetch and retrieve content from URLs
+
+---
+
 ### Planner Sub-Agent
 
 | Tool | Description |
@@ -81,9 +94,19 @@ A CLI-based AI coding companion im building from scratch while reverse engineeri
 
 ---
 
+### Memory System
+
+- write_memory - Store persistent memory across sessions
+
+The agent stores three types of memory in `.agent/` folder:
+- USER.md - User preferences and habits
+- PROJECT.md - Project-specific facts and configuration
+- AGENT.md - Lessons learned while working in the repo
+
+---
+
 ## Upcoming Features
 
-- Memory for better context
 - Token usage screen
 - Run/build/execute .py/.js/.ts code
 - Voice mode (maybe)

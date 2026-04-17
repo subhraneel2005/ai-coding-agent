@@ -1,13 +1,24 @@
 import { readFile } from "fs/promises";
+import { existsSync, mkdirSync, writeFileSync } from "fs";
 
 export async function loadMemory() {
-  const agent = await readFile(".agent/AGENT.md");
-  const project = await readFile(".agent/PROJECT.md");
-  const user = await readFile(".agent/USER.md");
+  if (!existsSync(".agent")) {
+    mkdirSync(".agent", { recursive: true });
+  }
 
-  return {
-    agent,
-    project,
-    user,
+  const files = {
+    agent: ".agent/AGENT.md",
+    project: ".agent/PROJECT.md",
+    user: ".agent/USER.md",
   };
+
+  for (const path of Object.values(files)) {
+    if (!existsSync(path)) writeFileSync(path, "");
+  }
+
+  const agent = await readFile(files.agent, "utf8");
+  const project = await readFile(files.project, "utf8");
+  const user = await readFile(files.user, "utf8");
+
+  return { agent, project, user };
 }
