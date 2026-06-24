@@ -196,7 +196,8 @@ export default function Page() {
             View on GitHub
           </a>
           <a
-            href="#article"
+            href="https://x.com/subhraneeltwt/status/2062556155113837014?s=20"
+            target="_blank"
             className={cn(
               buttonVariants({ variant: "outline", size: "default" }),
               "rounded-md"
