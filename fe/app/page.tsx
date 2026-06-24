@@ -196,7 +196,7 @@ export default function Page() {
             View on GitHub
           </a>
           <a
-            href="https://x.com/subhraneeltwt/status/2062556155113837014?s=20"
+            href="https://subhraneel2005.github.io/blogs/built-my-own-claude-code"
             target="_blank"
             className={cn(
               buttonVariants({ variant: "outline", size: "default" }),
