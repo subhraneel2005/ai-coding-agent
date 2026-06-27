@@ -1,4 +1,3 @@
-import { input } from "@inquirer/prompts";
 import z from "zod";
 
 export const WriteFileSchema = z.object({
