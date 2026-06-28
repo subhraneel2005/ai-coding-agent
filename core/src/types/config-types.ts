@@ -23,7 +23,7 @@ export const GlobalAgentConfig = z.object({
 // Project config (<project>/.nini/config.json)
 export const ProjectConfig = z.object({
   defaultProvider: z.enum(ProviderEnum),
-  defultModel: z.string(),
+  defaultModel: z.string(),
 });
 
 // Session config (global scoped) (~/.config/nini/sessions/<projectHash>/<sessionId>.json)
@@ -50,7 +50,6 @@ export const ProjectIndex = z.record(
   z.string(), //projectHash
   z.object({
     projectPath: z.string(),
-    projectName: z.string(),
     lastOpened: z.iso.datetime(),
   }),
 );
@@ -58,5 +57,28 @@ export const ProjectIndex = z.record(
 export type ProviderType = z.infer<typeof ProviderEnum>;
 export type GlobalAgentConfigType = z.infer<typeof GlobalAgentConfig>;
 export type ProjectConfigType = z.infer<typeof ProjectConfig>;
+export type SessionConfigType = z.infer<typeof SessionConfig>;
 export type MessageType = z.infer<typeof Message>;
 export type ProjectIndexType = z.infer<typeof ProjectIndex>;
+
+
+// complete structure:
+
+// global (sessions, projects recordBook, config)
+/* 
+/Users/subhraneel-macos/.config/nini/
+├── config.json
+├── projects.json --> record book 
+└── sessions/
+    ├── 6c92d8ab/
+    │   ├── session1.json
+    │   └── session2.json
+    └── 91af2c11/
+        └── session1.json
+*/
+
+// projectScoped config
+/* /Users/subhraneel-macos/projects/nini/
+└── .nini/
+    └── config.json
+*/
